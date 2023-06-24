@@ -157,5 +157,22 @@ sphinx_*/
 # Debian packaging: ignore everything at the top level, since it isn't
 # included in our repository
 #
-/*
-!/debian/
+#/*
+#!/debian/
+*.rpm
+*.deb
+
+#
+# We don't want to ignore the following even if they are dot-files
+#
+!.clang-format
+!.cocciconfig
+!.get_maintainer.ignore
+!.gitattributes
+!.gitignore
+!.kunitconfig
+!.mailmap
+!.rustfmt.toml
+
+
+

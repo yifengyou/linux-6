@@ -26,7 +26,7 @@
 # System.map is generated to document addresses of all kernel symbols
 
 # Error out on error
-set -e
+set -xe
 
 LD="$1"
 KBUILD_LDFLAGS="$2"

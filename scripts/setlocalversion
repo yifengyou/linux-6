@@ -10,8 +10,6 @@
 #
 #
 
-exit 0
-
 usage() {
 	echo "Usage: $0 [--no-local] [srctree]" >&2
 	exit 1
@@ -185,4 +183,5 @@ elif [ "${LOCALVERSION+set}" != "set" ]; then
 	scm_version="$(scm_version --short)"
 fi
 
-echo "${KERNELVERSION}${file_localversion}${config_localversion}${LOCALVERSION}${scm_version}"
+#echo "${KERNELVERSION}${file_localversion}${config_localversion}${LOCALVERSION}${scm_version}"
+echo "${KERNELVERSION}${file_localversion}${config_localversion}${LOCALVERSION}"

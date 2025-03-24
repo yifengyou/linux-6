@@ -96,7 +96,19 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 Types: deb
-URIs: http://security.ubuntu.com/ubuntu/
+URIs: http://mirrors.aliyun.com/ubuntu/
+Suites: noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+Types: deb-src
+URIs: http://mirrors.aliyun.com/ubuntu
+Suites: noble noble-updates noble-backports
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+Types: deb-src
+URIs: http://mirrors.aliyun.com/ubuntu/
 Suites: noble-security
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
@@ -106,7 +118,9 @@ EOF
 	apt-get update && apt-get install -y vim tmux openssh-server net-tools build-essential lrzsz
 	sed -i '/^#PermitRootLogin/c\PermitRootLogin yes' /etc/ssh/sshd_config
 	rm -f /etc/profile.d/*
+	rm -f /etc/update-motd.d/*
 	sync
+	ln -svf /usr/src/linux-headers-6.8.4-kdev /kernel
 	# reboot -f
 else
 	sync

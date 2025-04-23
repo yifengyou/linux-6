@@ -1,0 +1,13 @@
+sourcedir = /linux/linux-6.git
+nbd = nbd6
+arch = x86_64
+docker_image = yifengyou/linux6.0:latest
+debug = True
+skipimagecheck = True
+vmname = kdev-linux6
+config = ubuntu24_x86_64_defconfig
+nodocker = False
+mrproper = False
+isoimage = False
+rclocal = /linux/linux-6.git-build-x86_64/rclocal
+qcow2_image = /linux/linux-6.git-build-x86_64/rootfs.qcow2
